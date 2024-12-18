@@ -1,0 +1,11 @@
+*{
+    overflow-x: hidden;
+}
+img.slids{
+    height: 800px;
+}
+    
+
+.col-md-6{
+    border: 2px solid wheat;
+}

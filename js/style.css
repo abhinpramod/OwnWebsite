@@ -1,0 +1,11 @@
+.col{
+    background-color: blueviolet;
+    border: 2px solid rgb(234, 228, 228);
+    text-align: center;
+}
+.container{
+    background-color: aqua;
+}
+.main{
+    background-color: black;
+}
