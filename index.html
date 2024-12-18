@@ -40,13 +40,13 @@
       <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel " >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./carosel1 - Copy.jpg" class="slids d-block w-100" alt="...">
+            <img src="./public/carosel1 - Copy.jpg" class="slids d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./carosal2 - Copy.jpg" class="slids d-block w-100" alt="...">
+            <img src="./public/carosal2 - Copy.jpg" class="slids d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./carosal3 - Copy.jpg" class="slids d-block w-100" alt="...">
+            <img src="./public/carosal3 - Copy.jpg" class="slids d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -65,7 +65,7 @@
   <div class="row">
     <div class="col-md-4">
       <div class=" card me-5" >
-        <img src="./jeep wrangler.png" class=" card-img-top" alt="...">
+        <img src="./public/jeep wrangler.png" class=" card-img-top" alt="...">
         <div class=" card-body">
           <p class=" card-title fs-5 fw-bold">JEEP WRANNGLER</p>
           <p class=" card-text">2020 MODEL\MANUAL</p>
@@ -75,7 +75,7 @@
     </div>
     <div class="col-md-4">
       <div class=" card me-5" >
-        <img src="./bmw x5.png" class=" card-img-top" alt="...">
+        <img src="./public/bmw x5.png" class=" card-img-top" alt="...">
         <div class=" card-body">
           <p class=" card-title fs-5 fw-bold">BMW X5</p>
           <p class=" card-text">2018 MODEL\AUTOMATIC</p>
@@ -85,7 +85,7 @@
     </div>
     <div class="col-md-4">
       <div class=" card me-5" >
-        <img src="./porshe 911.webp" class=" card-img-top" alt="...">
+        <img src="./public/porshe 911.webp" class=" card-img-top" alt="...">
         <div class=" card-body">
           <p class=" card-title fs-5 fw-bold">POSHE 911</p>
           <p class=" card-text">2022 MODEL/AUTOMATIC</p>
@@ -95,7 +95,7 @@
     </div>
     <div class="col-md-4">
       <div class=" card me-5" >
-        <img src="./range rover.png" class=" card-img-top" alt="...">
+        <img src="./public/range rover.png" class=" card-img-top" alt="...">
         <div class=" card-body">
           <p class=" card-title fs-5 fw-bold">RANGE ROVER </p>
           <p class=" card-text">2020 MODEL\MANUAL</p>
@@ -105,7 +105,7 @@
     </div>
     <div class="col-md-4">
       <div class=" card me-5" >
-        <img src="./ROLLS ROYCE.jpeg" class=" card-img-top" alt="...">
+        <img src="./public/ROLLS ROYCE.jpeg" class=" card-img-top" alt="...">
         <div class=" card-body">
           <p class=" card-title fs-5 fw-bold">ROLLS ROYCE</p>
           <p class=" card-text">2015 MODEL\AUTOMATIC</p>
@@ -115,7 +115,7 @@
     </div>
     <div class="col-md-4">
       <div class=" card me-5 " >
-        <img src="./porshe.png" class=" card-img-top" alt="...">
+        <img src="./public/porshe.png" class=" card-img-top" alt="...">
         <div class=" card-body">
           <p class=" card-title fs-5 fw-bold">POSHE UREKAN</p>
           <p class=" card-text">2024 MODEL/AUTOMATIC</p>
@@ -205,27 +205,27 @@
     if(name.value===''||name.value==null )
     {
       e.preventDefault(); 
-      name_error.innerHTML ="*Name is Reqired*"
+      name_error.innerHTML ="*Name is Reqired"
        
     }
 
     if(!phone.value.match(phone_cheak))
     {
       e.preventDefault(); 
-      phone_error.innerHTML ="* valid phone is required*"
+      phone_error.innerHTML ="* valid phone is required"
       valid = false;
     }
       if(!email.value.match(email_cheak))
     {
       e.preventDefault(); 
-      email_error.innerHTML ="* valid Email is required*"
+      email_error.innerHTML ="* valid Email is required"
       valid = false;
 
     }
     if(city.value===''||city.value==null )
     {
       e.preventDefault(); 
-      city_error.innerHTML ="* city Name is Reqired*"
+      city_error.innerHTML ="* city Name is Reqired"
       valid = false;
     }
     return valid;
