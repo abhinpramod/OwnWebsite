@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
 </head>
 <body>
   <div class="main"></div>
@@ -149,87 +150,89 @@
     </div>
   </div>
 </div>
-<div class="container-fluid text-center  text-dark">
+<div class="container mt-5  "  class="container-sm">
 
-    <center>
-      <form class="form " id="form">
-        <p class="fs-3">Register</p>
+ 
+    <form id="registrationForm" class="border p-4 shadow-sm rounded  " style="max-width: 700px;">
+      <p class="text-center  " style="font-size: 40px;" > <b>Registration Form</b></p>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+            <small class="text-danger" id="nameError"></small>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" id="phone" class="form-control" placeholder="Enter your phone number">
+            <small class="text-danger" id="phoneError"></small>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" id="email" class="form-control" placeholder="Enter your email">
+            <small class="text-danger" id="emailError"></small>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" id="city" class="form-control" placeholder="Enter your city">
+            <small class="text-danger" id="cityError"></small>
+        </div>
+        <button type="button" class="btn btn-primary w-100" style="max-width: 200px;" onclick="validateForm()">Register</button>
+        <br>
+        <br>
+        <p ><b id="Successful" style="font-size: 22px;"  > </b></p>
+    </form>
 
-      <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Enter Name "><br>  
-      <span style="color: red;" id="name_error"></span><br>
-    
-      <label for="name">phone</label>
-      <input type="text" id="phone" placeholder="Enter Phone "><br>  
-      <span style="color: red;" id="phone_error"></span><br> 
-    
-      <label for="name">Email</label>
-      <input type="email" id="email" placeholder="Enter Email "><br>  
-      <span style="color: red;" id="email_error"></span><br> 
-    
-      <label for="name">City &nbsp</label>
-      <input type="text" id="city" placeholder="Enter city"><br>
-      <span style="color: red;" id="city_error"></span><br> 
-    
-    <button type="submit" class="button">submit</button>
-    
-      </form></center>
-
+ 
 </div>
- <script>
-  const name=document.getElementById("name");
-  const phone=document.getElementById("phone"); 
-  const email=document.getElementById("email"); 
-  const city=document.getElementById("city"); 
-  const form=document.getElementById("form"); 
 
-  const name_error=document.getElementById("name_error");
-  const phone_error=document.getElementById("phone_error"); 
-  const email_error=document.getElementById("email_error"); 
-  const city_error=document.getElementById("city_error"); 
+<script>
+  function validateForm() {
+      let isValid = true;
+
+      // Clear previous errors
+      document.querySelectorAll('small').forEach(el => el.textContent = '');
+    
+      // Regex patterns
+      const namePattern = /^[a-zA-Z\s]{3,}$/;
+      const phonePattern = /^\d{10}$/;
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      // Get input values
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const city = document.getElementById('city').value.trim();
+
+      // Validate Name
+      if (!namePattern.test(name)) {
+          document.getElementById('nameError').textContent = 'Enter a valid name (minimum 3 characters).';
+          isValid = false;
+      }
+
+      // Validate Phone
+      if (!phonePattern.test(phone)) {
+          document.getElementById('phoneError').textContent = 'Enter a valid 10-digit phone number.';
+          isValid = false;
+      }
+
+      // Validate Email
+      if (!emailPattern.test(email)) {
+          document.getElementById('emailError').textContent = 'Enter a valid email address.';
+          isValid = false;
+      }
+
+      // Validate City
+      if (city.length < 2) {
+          document.getElementById('cityError').textContent = 'City name must be at least 2 characters long.';
+          isValid = false;
+      }
+
+      if (isValid) {
+          document.getElementById('Successful').innerHTML=`Successful ${name} we will contact you soon ..`
+      }
+  }
+</script>
 
 
-  form.addEventListener('submit',(e)=>
-  {
-    name_error.innerHTML = "";
-    phone_error.innerHTML = "";
-    email_error.innerHTML = "";
-    city_error.innerHTML = "";
-
-
-    var email_cheak = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    var phone_cheak= /^(\+?\d{1,2}\s?)?(\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}$/
-
-    let valid=true;
-
-    if(name.value===''||name.value==null )
-    {
-      e.preventDefault(); 
-      name_error.innerHTML ="*Name is Reqired"
-       
-    }
-
-    if(!phone.value.match(phone_cheak))
-    {
-      e.preventDefault(); 
-      phone_error.innerHTML ="* valid phone is required"
-      valid = false;
-    }
-      if(!email.value.match(email_cheak))
-    {
-      e.preventDefault(); 
-      email_error.innerHTML ="* valid Email is required"
-      valid = false;
-
-    }
-    if(city.value===''||city.value==null )
-    {
-      e.preventDefault(); 
-      city_error.innerHTML ="* city Name is Reqired"
-      valid = false;
-    }
-    return valid;
-  })
 
 
  </script>
